@@ -24,6 +24,10 @@ ENV BUILD_OUTPUT_DIR /home/$USER_NAME/output
 RUN mkdir -p $BUILD_INPUT_DIR $BUILD_OUTPUT_DIR
 
 WORKDIR $BUILD_INPUT_DIR
+
+# add this and below command will run without cache
+ARG CACHEBUST=1
+
 RUN git clone https://github.com/openbmc/$PROJECT.git
 
 WORKDIR $BUILD_OUTPUT_DIR
