@@ -29,3 +29,4 @@ RUN git clone https://github.com/openbmc/$PROJECT.git
 WORKDIR $BUILD_OUTPUT_DIR
 ENV TEMPLATECONF=$BUILD_INPUT_DIR/$PROJECT/meta-ibm/meta-romulus/conf
 RUN ls $BUILD_INPUT_DIR/$PROJECT
+CMD source $BUILD_INPUT_DIR/$PROJECT/openbmc-env build && bitbake obmc-phosphor-image
